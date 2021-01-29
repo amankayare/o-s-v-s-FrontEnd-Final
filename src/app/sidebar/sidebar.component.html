@@ -3,43 +3,36 @@
 <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
 
 
+
 <aside class="side-nav" id="show-side-navigation1">
   <i class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg" data-close="show-side-navigation1"></i>
   <div class="heading">
-   
+
     <div class="info">
-      <h3><a>Admin Dashboard</a></h3>
-      <p>Welcome Friend</p>
+      <h3><a >Admin Dashboard</a></h3>
+      <p>Welcome Admin</p>
     </div>
   </div>
   <div class="search">
-   
+
   </div>
   <ul class="categories">
-    <li><i class="fas fa-vote-yea" aria-hidden="true"></i><a >Election</a>
-      <ul class="side-nav-dropdown">
-        <li><a  [routerLink]="['E-Ballot/api/createballot']">Create the Ballot</a></li>
-        
-       
-      </ul>
+    <li><i class="fas fa-vote-yea" aria-hidden="true"></i><a [routerLink]="['createballot']">Create the Ballot</a>
+      
     </li>
-    <li><i class="fas fa-user-plus"></i><a>Candidate</a>
-      <ul class="side-nav-dropdown">
-        <li><a [routerLink]="['E-Ballot/api/managecandidates']">Manage Candidates</a></li>
-      </ul>
+    <li><i class="fas fa-user-plus"></i><a [routerLink]="['managecandidates']">Manage Candidates</a>
+     
     </li>
 
-    <li><i class="fas fa-person-booth"></i><a>Voter</a>
-      <ul class="side-nav-dropdown">
-        <li><a [routerLink]="['E-Ballot/api/managevoter']">Manage Voters</a></li>
-      </ul>
+    <li><i class="fas fa-person-booth"></i><a  [routerLink]="['managevoter']">Manage Voters</a>
+      
     </li>
-    <li><i class="fas fa-poll"></i><a [routerLink]="['E-Ballot/api/result']"> Results</a>
-      <li><i class="fas fa-user-edit"></i><a [routerLink]="['E-Ballot/api/profile']"> Profile</a>
+    <li><i class="fas fa-poll"></i><a [routerLink]="['result']"> Results</a>
+    <li><i class="fas fa-user-edit"></i><a [routerLink]="['profile']"> Profile</a>
     </li>
-    <li><i class="fa fa-users fa-fw"></i><a [routerLink]="['E-Ballot/api/contact']">contact List</a></li>
-     
-    
+    <li><i class="fa fa-users fa-fw"></i><a [routerLink]="['contact']">contact List</a></li>
+
+
   </ul>
 </aside>
 

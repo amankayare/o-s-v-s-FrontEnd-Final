@@ -3,67 +3,9 @@
   integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
   crossorigin="anonymous" />
 <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
-
-
-<nav class="navbar navbar-default" style="background-color:#252636;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <i class="fa fa-align-right"></i>
-      </button>
-      <a class="navbar-brand" href="#">my<span class="main-color">Dashboard</span></a>
-    </div>
-    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-            aria-expanded="false">My profile <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a [routerLink]="['profile']"><i class="fa fa-user"></i> My account</a></li>
-            <li role="separator" class="divider"></li>
-            <li style="cursor: pointer;"><a (click)="logout();"><i class="fa fa-sign-out"></i> Log out</a></li>
-          </ul>
-        </li>
-
-        <!-- <li><a href="#"><i data-show="show-side-navigation1" class="fa fa-bars show-side-btn"></i></a></li> -->
-      </ul>
-    </div>
-  </div>
-</nav>
-<aside class="side-nav" id="show-side-navigation1">
-  <i class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg" data-close="show-side-navigation1"></i>
-  <div class="heading">
-
-    <div class="info">
-      <h3><a >Admin Dashboard</a></h3>
-      <p>Welcome Admin</p>
-    </div>
-  </div>
-  <div class="search">
-
-  </div>
-  <ul class="categories">
-    <li><i class="fas fa-vote-yea" aria-hidden="true"></i><a [routerLink]="['createballot']">Create the Ballot</a>
-      
-    </li>
-    <li><i class="fas fa-user-plus"></i><a [routerLink]="['managecandidates']">Manage Candidates</a>
-     
-    </li>
-
-    <li><i class="fas fa-person-booth"></i><a  [routerLink]="['managevoter']">Manage Voters</a>
-      
-    </li>
-    <li><i class="fas fa-poll"></i><a [routerLink]="['result']"> Results</a>
-    <li><i class="fas fa-user-edit"></i><a [routerLink]="['profile']"> Profile</a>
-    </li>
-    <li><i class="fa fa-users fa-fw"></i><a [routerLink]="['contact']">contact List</a></li>
-
-
-  </ul>
-</aside>
-
-
+<app-sidebar>
+</app-sidebar>
+<app-navbar></app-navbar>
 <div class="col-lg-12 mb-4 ">
   <router-outlet></router-outlet>
 </div>
