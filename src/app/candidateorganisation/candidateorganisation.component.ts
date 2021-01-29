@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Organization } from '../Entities/organization';
 import { OrganizationService } from '../Services/organization.service';
@@ -24,7 +25,7 @@ export class CandidateorganisationComponent implements OnInit {
   
   //form: FormGroup;
   organization: Organization | any;
-  constructor(private router: Router, private http: HttpClient, public fb: FormBuilder, private toastr: ToastrService, private organizationService: OrganizationService) {
+  constructor(private SpinnerService: NgxSpinnerService,private router: Router, private http: HttpClient, public fb: FormBuilder, private toastr: ToastrService, private organizationService: OrganizationService) {
 
 
     // this.form = this.fb.group({
@@ -78,7 +79,9 @@ export class CandidateorganisationComponent implements OnInit {
     headers.append("Authorization", "my_token");
     headers.append("responseType", "text");
 
+    this.SpinnerService.show();
     this.organization = await this.organizationService.addOrganization(formData, { headers: headers }).toPromise();
+    this.SpinnerService.hide();
     console.log("orggg", this.organization);
     if (this.organization.status == "SUCCESS") {
       console.log("msg", this.organization.message);

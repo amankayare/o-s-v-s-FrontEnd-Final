@@ -14,9 +14,9 @@ export class ElectionService {
   
   constructor(private http:HttpClient) { }
 
-  addElection(election : Election) : Observable<String>{
+  addElection(election : Election) : Observable<string>{
 
-    return this.http.post<String>("http://localhost:8080/E-Ballot/api/addElection",election);
+    return this.http.post<string>("http://localhost:8080/E-Ballot/api/addElection",election);
 
  }
 

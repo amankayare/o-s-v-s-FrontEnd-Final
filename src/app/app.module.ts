@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
-
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,7 +39,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ElectionDetailsComponent } from './election-details/election-details.component';
-
+import { NgxSpinnerModule } from "ngx-spinner";  
 
 
 @NgModule({
@@ -87,6 +86,7 @@ import { ElectionDetailsComponent } from './election-details/election-details.co
     Ng2GoogleChartsModule,
     FormsModule,
     CommonModule,
+    NgxSpinnerModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       timeOut: 10000,

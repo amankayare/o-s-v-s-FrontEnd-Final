@@ -31,12 +31,15 @@ export class AdminloginComponent implements OnInit {
 
       username: [''],
       password: [''],
+    
 
     })
   }
 
   ngOnInit(): void {
+
   }
+
   toggleForm() {
     this.container = document.querySelector('.container');
     this.container.classList.toggle('active');
@@ -66,8 +69,9 @@ export class AdminloginComponent implements OnInit {
     if (this.login.status == "SUCCESS") {
       console.log("successfull login");
 
+      sessionStorage.setItem('adminId', this.login.adminId);
       sessionStorage.setItem('username', this.username);
-
+      console.log("adminId"+this.login.adminId);
       this.router.navigate(['E-Ballot/api/adminDashboard']);
 
 
