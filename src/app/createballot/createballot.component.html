@@ -46,29 +46,32 @@
         </div>
       
 
-    
+        <form  ng-app="myApp"  ng-controller="validateCtrl"
+name="myForm" novalidate>
         <div class="col-lg-6 col-xs-12 col-sm-6">
+          
           <div class="form-group">
             <label for="exampleInputEmail1">Election Name</label>
             <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
-            padding: .5rem .75rem;border-radius: .50rem;" type="text" name="electionName" [(ngModel)]="Election.electionName" class="form-control" id="exampleInputEmail1" placeholder="Election Name">
-          </div>
+            padding: .5rem .75rem;border-radius: .50rem;" type="text" id="electionName" name="electionName" [(ngModel)]="Election.electionName" class="form-control" id="exampleInputEmail1" placeholder="Election Name">
+         <span ng-show="myForm.electionName.$error.required">Username is required.</span>
+        </div>
         </div>
         
         
         <div class="col-lg-offset-0 col-lg-6 col-xs-12 ">
           <div class="form-group">
             <label for="exampleInputEmail1">Start Date</label>
-            <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
-            padding: .5rem .75rem;border-radius: .50rem;" type="date" name="startDate" [(ngModel)]="Election.startDate" class="form-control" id="exampleInputEmail1" placeholder="Start Date Of Election">
+            <input min={{this.currentDate}} style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
+            padding: .5rem .75rem;border-radius: .50rem;" type="date" name="startDate" id="startDate" [(ngModel)]="Election.startDate" class="form-control" id="exampleInputEmail1" placeholder="Start Date Of Election">
           </div>
         </div>
 
         <div class="col-lg-offset-0 col-lg-6 col-xs-12 col-sm-6">
           <div class="form-group">
             <label for="exampleInputEmail1">End Date</label>
-            <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
-            padding: .5rem .75rem;border-radius: .50rem;" type="date" name="endDate" [(ngModel)]="Election.endDate" class="form-control" id="exampleInputEmail1" placeholder="End Date of Election">
+            <input min={{this.currentDate}} style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
+            padding: .5rem .75rem;border-radius: .50rem;" type="date" name="endDate" id="endDate" [(ngModel)]="Election.endDate" class="form-control" id="exampleInputEmail1" placeholder="End Date of Election">
           </div>
         </div>
 
@@ -77,8 +80,8 @@
         <div class="col-lg-offset-0 col-lg-6 col-xs-12 col-sm-6">
           <div class="form-group">
             <label for="exampleInputEmail1">Result Date</label>
-            <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
-            padding: .5rem .75rem;border-radius: .50rem;" type="date" class="form-control" name="resultDate" [(ngModel)]="Election.resultDate" id="exampleInputEmail1" placeholder="Result Date of Election">
+            <input min={{this.currentDate}} style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
+            padding: .5rem .75rem;border-radius: .50rem;" type="date" class="form-control" id="resultDate" name="resultDate" [(ngModel)]="Election.resultDate" id="exampleInputEmail1" placeholder="Result Date of Election">
           </div>
         </div>
 
@@ -89,13 +92,18 @@
           you enter the correct details.</label>
           </div>
         </div>
-      
+
+        <button type="button" id="submit" class="btn btn-primary btn-large"  data-target="#exitApplication" disabled="disabled" (click)="addElection()" >Create Ballot</button>
+        <!-- <input type="submit" id="register"  (click)="addElection()" class="btn btn-primary btn-large"  ata-target="#exitApplication"  value="Create Ballot" disabled="disabled"/> -->
+        
+
+      </form>
+    
       </div><!--/ Row-->
       
       
 
-      <button type="button" class="btn btn-primary btn-large" data-target="#exitApplication" (click)="addElection()" >Create Ballot</button>
-
+    
       <!-- Exit (Are you sure?) Modal -->
       <!-- <div class="modal fade" id="exitApplication" tabindex="-1" role="dialog" aria-labelledby="exitApplication">
         <div class="modal-dialog" role="document">

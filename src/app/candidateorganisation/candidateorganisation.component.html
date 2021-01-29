@@ -7,7 +7,7 @@
    
       
       
-    <section id="contents">
+   
   
      
   
@@ -22,7 +22,7 @@
      
     </div>
   </nav>
-
+  <section id="contents">
   <br>
   <div class="  col-sm-12 ">
             
@@ -31,7 +31,8 @@
       <h3>Thank you for choosing e-ballot.</h3>
       <br>
       <h4>Here are some rules you need to follow.</h4><p>1.You are allowed to upload file followed by .xlsx extention only. Files with jpg/jifi is not allowed. </p>
-      <p>2. In the excel sheet there should be field with EmployeeID, Full name,Email and Adharcard.</p>
+      <p>2.Excel sheet must be followed with voter and candidate list respectively. </p>
+      <p>3.In the excel sheet there should be field with EmployeeID, Full name,Email and Adharcard in both the above lists.</p>
     </div>
   
       <form [formGroup]="form">
@@ -91,8 +92,6 @@
         
         
         </div><!--/ Row-->
-        
-        <hr>
   <br>
         <button type="button" class="btn btn-primary btn-large" 
         data-toggle="modal"     data-target="#exitApplication"> Submit </button>
@@ -133,6 +132,7 @@
   <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
     <p style="color: white">Please Wait. </p>  
     </ngx-spinner>  
+    <br>
     </section>
 
       

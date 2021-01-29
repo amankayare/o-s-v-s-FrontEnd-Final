@@ -107,5 +107,25 @@ function loadTracking() {
 //========================================================================================================
 
 
-  
+var fields = "#electionName, #startDate, #endDate, #resultDate";
 
+$(fields).on('change', function() {
+    if (allFilled()) {
+        $('#register').removeAttr('disabled');
+    } else {
+        $('#register').attr('disabled', 'disabled');
+    }
+});
+
+function allFilled() {
+    var filled = true;
+    $(fields).each(function() {
+        if ($(this).val() == '') {
+            filled = false;
+        }
+    });
+    return filled;
+}
+$(document).ready(function() {
+    $('#register').attr("disabled", true);
+});

@@ -25,6 +25,7 @@ import { ErrorComponent } from './error/error.component';
 import { ContactComponent } from './contact/contact.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { HomeresultComponent } from './homeresult/homeresult.component';
 
 
 /*
@@ -60,7 +61,7 @@ const routes: Routes = [
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent},
   { path: 'E-Ballot/api/adminDashboard', component: AdminDashboardComponent ,
   children: [
     { path: '', component: ResultComponent },
@@ -75,6 +76,7 @@ const routes: Routes = [
 
   
   ],},
+  { path: 'result', component: HomeresultComponent},
   { path: 'E-Ballot/api/addvoter', component: AddvoterComponent },
   { path: 'E-Ballot/api/login/:id', component: LoginComponent },
   { path: 'E-Ballot/api/voterdashboard', component: VoterdashboardComponent },

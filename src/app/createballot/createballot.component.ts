@@ -24,12 +24,14 @@ export class CreateballotComponent implements OnInit {
     enddate:[''],
     resultDate:['']
   })
+  currentDate: Date| any;
   
 
   constructor(private electionService:ElectionService,private router:Router, public fb: FormBuilder,private candidateService:CandidateService) { }
 
   ngOnInit()  {
-   
+    this.currentDate=this.formatDate(new Date());
+    console.log(this.currentDate)
     }
 
     addElection(){
@@ -46,4 +48,17 @@ export class CreateballotComponent implements OnInit {
       this.router.navigate(['E-Ballot/api/adminDashboard/listofcandidate']);
     }
 
+    formatDate(date:any) {
+      var d = new Date(date),
+          month = '' + (d.getMonth() + 1),
+          day = '' + d.getDate(),
+          year = d.getFullYear();
+  
+      if (month.length < 2) month = '0' + month;
+      if (day.length < 2) day = '0' + day;
+  
+      return [year, month, day].join('-');
+     }
+
+  
   }

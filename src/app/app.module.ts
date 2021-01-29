@@ -39,7 +39,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ElectionDetailsComponent } from './election-details/election-details.component';
-import { NgxSpinnerModule } from "ngx-spinner";  
+import { NgxSpinnerModule } from "ngx-spinner";
+import { HomeresultComponent } from './homeresult/homeresult.component';  
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     ContactComponent,
     ThankyouComponent,
     AdminDashboardComponent,
-    ElectionDetailsComponent
+    ElectionDetailsComponent,
+    HomeresultComponent
   
 
 
