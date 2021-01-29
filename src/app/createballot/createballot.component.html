@@ -37,7 +37,11 @@
           <div class="form-group">
             <label for="exampleInputEmail1">CIN Number</label>
             <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
-            padding: .5rem .75rem;border-radius: .50rem;" type="text" name="cin" [(ngModel)]="Election.cin" class="form-control" id="exampleInputEmail1" placeholder="CIN Number">
+            padding: .5rem .75rem;border-radius: .50rem;" type="text" name="cin"
+             [(ngModel)]="Election.cin" class="form-control" id="exampleInputEmail1" placeholder="CIN Number">
+             <small id="emailHelp" class="form-text text-danger"
+             *ngIf="form.get('cin')?.invalid  && form.get('cin')?.touched" >Please Enter valid CIN.</small>
+
           </div>
         </div>
       

@@ -81,7 +81,7 @@ const routes: Routes = [
   { path: 'E-Ballot/api/votecandidate', component: VotecandidateComponent },
   { path: 'E-Ballot/api/aboutus', component: AboutusComponent },
   { path: 'E-Ballot/api/addcandidates', component: AddcandidateComponent },
-  { path: 'E-Ballot/api/candidateorganisation', component: CandidateorganisationComponent },
+  { path: 'E-Ballot/api/organisation', component: CandidateorganisationComponent },
   { path: 'E-Ballot/api/8888', component: AdminloginComponent },
   { path: 'E-Ballot/api/thankyou', component: ThankyouComponent },
   { path: '**', component: ErrorComponent },

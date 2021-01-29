@@ -27,18 +27,18 @@ export class CandidateorganisationComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient, public fb: FormBuilder, private toastr: ToastrService, private organizationService: OrganizationService) {
 
 
-    this.form = this.fb.group({
-      cin: [''],
-      orgnizationName: [''],
-      adharNo: [''],
-      excelFile: [null]
-    })
+    // this.form = this.fb.group({
+    //   cin: [''],
+    //   orgnizationName: [''],
+    //   adharNo: [''],
+    //   excelFile: [null]
+    // })
 
   }
   vari = false;
   iserror = false;
   errormsg = "";
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
   uploadFile(event: any) {
@@ -46,9 +46,16 @@ export class CandidateorganisationComponent implements OnInit {
     console.log("upload file form");
 
     const file =(event.target as HTMLInputElement).files![0];
-    
+    let str = event.target.value;
+    let namearr = str.split('.');
+    let name = namearr[namearr.length - 1];
+    if (name != "xlsx") {
+      this.vari = true;
+      this.errormsg = "File Extensions should be xlsx";
+      this.iserror = true;
+      return;
   
-
+    }
     this.form.patchValue({
       excelFile: file
     });

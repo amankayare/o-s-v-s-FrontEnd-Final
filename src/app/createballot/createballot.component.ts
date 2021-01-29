@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Candidate } from '../Entities/candidate';
 import { Election } from '../Entities/election';
 import { CandidateService } from '../Services/candidate.service';
 import { ElectionService } from '../Services/election.service';
 
-declare var $: any;
-declare var jQuery: any;
+
 @Component({
   selector: 'app-createballot',
   templateUrl: './createballot.component.html',
@@ -14,12 +14,19 @@ declare var jQuery: any;
   
 })
 export class CreateballotComponent implements OnInit {
+  submitted = false;
 
   Election: Election =new Election(); ///for binding
-
+  public form = this.fb.group({
+    cin: ['', [Validators.required,Validators.pattern('^[a-zA-Z0-9 ]{5,20}$')]],
+    electionName: ['',Validators.required,[Validators.required,Validators.pattern('^[a-zA-Z ]{5,20}$')]],
+    startdate:[''],
+    enddate:[''],
+    resultDate:['']
+  })
   
 
-  constructor(private electionService:ElectionService,private router:Router,private candidateService:CandidateService) { }
+  constructor(private electionService:ElectionService,private router:Router, public fb: FormBuilder,private candidateService:CandidateService) { }
 
   ngOnInit()  {
    

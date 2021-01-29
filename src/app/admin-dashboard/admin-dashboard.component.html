@@ -21,10 +21,8 @@
             aria-expanded="false">My profile <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a [routerLink]="['profile']"><i class="fa fa-user"></i> My account</a></li>
-
-            <li><a [routerLink]="['aboutus']"><i class="fa fa-question"></i> Help</a></li>
             <li role="separator" class="divider"></li>
-            <li><a (click)="logout();"><i class="fa fa-sign-out"></i> Log out</a></li>
+            <li style="cursor: pointer;"><a (click)="logout();"><i class="fa fa-sign-out"></i> Log out</a></li>
           </ul>
         </li>
 
@@ -38,31 +36,23 @@
   <div class="heading">
 
     <div class="info">
-      <h3><a>Admin Dashboard</a></h3>
-      <p>Welcome Friend</p>
+      <h3><a >Admin Dashboard</a></h3>
+      <p>Welcome Admin</p>
     </div>
   </div>
   <div class="search">
 
   </div>
   <ul class="categories">
-    <li><i class="fas fa-vote-yea" aria-hidden="true"></i><a>Election</a>
-      <ul class="side-nav-dropdown">
-        <li><a [routerLink]="['createballot']">Create the Ballot</a></li>
-
-
-      </ul>
+    <li><i class="fas fa-vote-yea" aria-hidden="true"></i><a [routerLink]="['createballot']">Create the Ballot</a>
+      
     </li>
-    <li><i class="fas fa-user-plus"></i><a>Candidate</a>
-      <ul class="side-nav-dropdown">
-        <li><a [routerLink]="['managecandidates']">Manage Candidates</a></li>
-      </ul>
+    <li><i class="fas fa-user-plus"></i><a [routerLink]="['managecandidates']">Manage Candidates</a>
+     
     </li>
 
-    <li><i class="fas fa-person-booth"></i><a>Voter</a>
-      <ul class="side-nav-dropdown">
-        <li><a [routerLink]="['managevoter']">Manage Voters</a></li>
-      </ul>
+    <li><i class="fas fa-person-booth"></i><a  [routerLink]="['managevoter']">Manage Voters</a>
+      
     </li>
     <li><i class="fas fa-poll"></i><a [routerLink]="['result']"> Results</a>
     <li><i class="fas fa-user-edit"></i><a [routerLink]="['profile']"> Profile</a>
@@ -74,6 +64,6 @@
 </aside>
 
 
-<div class="col-lg-9 mb-4 ">
+<div class="col-lg-12 mb-4 ">
   <router-outlet></router-outlet>
 </div>
