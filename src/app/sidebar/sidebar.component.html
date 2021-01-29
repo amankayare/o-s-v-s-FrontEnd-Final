@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+
+
+<aside class="side-nav" id="show-side-navigation1">
+  <i class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg" data-close="show-side-navigation1"></i>
+  <div class="heading">
+   
+    <div class="info">
+      <h3><a>Admin Dashboard</a></h3>
+      <p>Welcome Friend</p>
+    </div>
+  </div>
+  <div class="search">
+   
+  </div>
+  <ul class="categories">
+    <li><i class="fas fa-vote-yea" aria-hidden="true"></i><a >Election</a>
+      <ul class="side-nav-dropdown">
+        <li><a  [routerLink]="['E-Ballot/api/createballot']">Create the Ballot</a></li>
+        
+       
+      </ul>
+    </li>
+    <li><i class="fas fa-user-plus"></i><a>Candidate</a>
+      <ul class="side-nav-dropdown">
+        <li><a [routerLink]="['E-Ballot/api/managecandidates']">Manage Candidates</a></li>
+      </ul>
+    </li>
+
+    <li><i class="fas fa-person-booth"></i><a>Voter</a>
+      <ul class="side-nav-dropdown">
+        <li><a [routerLink]="['E-Ballot/api/managevoter']">Manage Voters</a></li>
+      </ul>
+    </li>
+    <li><i class="fas fa-poll"></i><a [routerLink]="['E-Ballot/api/result']"> Results</a>
+      <li><i class="fas fa-user-edit"></i><a [routerLink]="['E-Ballot/api/profile']"> Profile</a>
+    </li>
+    <li><i class="fa fa-users fa-fw"></i><a [routerLink]="['E-Ballot/api/contact']">contact List</a></li>
+     
+    
+  </ul>
+</aside>
+

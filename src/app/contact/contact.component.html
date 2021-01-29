@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--<-sidebar></app-sidebar>-->
+<br>
+<br>
+<br>
+<section id="contents">
+<div class="container-xl">
+<div class="table-responsive">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>User <b>Queries</b></h2>
+                </div>
+             
+            </div>
+        </div>
+        <br>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>E-mail ID</th>
+                    <th>Query</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let contact of listOfContact" >
+                    
+                        <td>
+                            <div class="form-group">
+                                {{contact.fullName}}
+                                <!-- <input type="text" [(ngModel)]="employeeId"  name="employeeId"  class="form-control" required> -->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                {{contact.email}}
+                                <!-- <input type="text" [(ngModel)]="fullName" name="fullName"  class="form-control" required> -->
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                {{contact.query}}
+                                <!-- <input type="number" [(ngModel)]="adharNo" name="adharNo"  class="form-control" required> -->
+                            </div>
+                        </td>
+                        
+                     <!--   <td>
+                            <a href="#editEmployeeModal" (click)="updateVoter(voter.voterId)" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>	
+                            <a href="#deleteEmployeeModal" (click)="deleteVoterById(voter.voterId)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                            
+                        </td>-->
+                
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>        
+</div>
+
+
+</section>
+

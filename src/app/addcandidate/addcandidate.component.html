@@ -1,0 +1,151 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+
+
+<section id="contents">
+  
+     
+  
+  <nav class="navbar navbar-default" style="background-color:#252636;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <i class="fa fa-align-right"></i>
+          </button>
+          <a class="navbar-brand" href="#">e<span class="main-color">Ballot</span></a>
+        </div>
+       
+      </div>
+    </nav>
+
+
+
+<br>
+<div class="  col-sm-12 ">
+            
+      
+    <div class="alert alert-info" role="alert">
+      <h3>Thank you for choosing e-ballot.</h3>
+      <br>
+      <h4>Here are some rules you need to follow for Candidate registration.</h4><p>1.You are allowed to upload file followed by png extention only. Files with jpg/jifi is not allowed. </p>
+      <p>2. Please provide recently working email id otherwise you are not able to track the futher process of election. </p>
+    </div>
+
+    <form [formGroup]="form">
+      <div class="row">
+
+        <div class="col-lg-offset-0 col-lg-6 col-xs-12 col-sm-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Employee ID</label>
+            <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
+            padding: .5rem .75rem;border-radius: .50rem;" type="text" formControlName="employeeId"  class="form-control"
+             id="exampleInputEmail1" placeholder="Candidate's Full Name" required>
+             <small id="emailHelp" class="form-text text-danger"
+             *ngIf="form.get('employeeId')?.invalid  && form.get('employeeId')?.touched" >Please Enter valid employeeId.</small>
+
+          </div>
+        </div>
+      
+        <div class="col-lg-offset-0 col-lg-6 col-xs-12 col-sm-6">
+          <div class="form-group"> 
+
+            <label for="exampleInputEmail1">Full Name</label>
+            <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
+            padding: .5rem .75rem;border-radius: .50rem;" type="text" formControlName="fullName"  class="form-control" id="exampleInputEmail1"
+             placeholder="Candidate's Full Name" required>
+             <small id="emailHelp" class="form-text text-danger"
+              *ngIf="form.get('fullName')?.invalid  && form.get('fullName')?.touched" >Please Enter valid Full Name.</small>
+
+          
+          </div>
+        </div>
+      
+
+        <div class="col-lg-6 col-xs-12 col-sm-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Symbol</label>
+            <input style="border: 1px solid rgba(0,0,0,.15); width: 100%; 
+            padding: .5rem .75rem;border-radius: .50rem;" type="file" (change)="uploadFile($event)" 
+            class="form-control" id="exampleInputEmail1" placeholder="Candidate's Full Name" required>
+            <span class="text-danger" *ngIf="iserror">{{errormsg}}</span>
+          </div>
+        </div>
+        
+        
+        <div class="col-lg-offset-0 col-lg-6 col-xs-12 ">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Adharcard Number</label>
+            <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%; 
+            padding: .5rem .75rem;border-radius: .50rem;" type="text" formControlName="adharNo" class="form-control"
+             id="exampleInputEmail1" placeholder="Candidate's Adharcard Number">
+             <small id="emailHelp" class="form-text text-danger"
+             *ngIf="form.get('adharNo')?.invalid  && form.get('adharNo')?.touched" >Please Enter valid Adharcard number.</small>
+          </div>
+        </div>
+
+        <div class="col-lg-offset-0 col-lg-6 col-xs-12 col-sm-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1">E-Mail Id</label>
+            <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
+            padding: .5rem .75rem;border-radius: .50rem;" type="email" formControlName="email" class="form-control"
+             id="exampleInputEmail1" placeholder="Candidate's E-Mail Id">
+             <small id="emailHelp" class="form-text text-danger"
+              *ngIf="form.get('email')?.invalid  && form.get('email')?.touched" >Please Enter valid Email-id.</small>
+
+          </div>
+        </div>
+        
+           
+      
+        <div class="bg-warning col-lg-offset-0 col-lg-12 col-xs-12">
+          <div class="checkbox">
+            <label>
+              
+            Remember once you sumbit the form you are not allowed to make any further changes, the authority is given to admin only. So make sure that
+          you enter the correct details.</label>
+          </div>
+        </div>
+        
+      <div class="col-lg-offset-0 col-lg-12 col-xs-12"> 
+          <br><br>
+            <span class="glyphicon glyphicon-info-sign"></span>               
+              If you want any help from us or if you want know how we work than <a href="E-Ballot/api/aboutus">click here.</a>. 
+        </div>
+      </div><!--/ Row-->
+      
+      <hr>
+      <br>
+
+
+      <button type="button" class="btn btn-primary btn-large"  data-toggle="modal" 
+      [disabled]="!form.valid" data-target="#exitApplication"> 
+        Submit </button>
+
+     <!-- Exit (Are you sure?) Modal -->
+     <div class="modal fade" id="exitApplication" tabindex="-1" role="dialog" aria-labelledby="exitApplication">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                               </div>
+          <div class="modal-body">
+            Do you want to save this application for later?
+          </div>
+          <div class="modal-footer">
+            <a  role="button"   data-dismiss="modal" class="btn btn-default btn-large">Don't save</a>
+            <a href="#" role="button"  data-dismiss="modal" (click)="submitForm()" class="btn btn-success btn-large">Save</a>
+          </div>
+        </div>
+      </div>
+    </div><!-- /Exit (Are you sure?) Modal -->
+
+
+
+      
+    </form>
+
+  </div> <!-- /Main Content -->
+ 
+  

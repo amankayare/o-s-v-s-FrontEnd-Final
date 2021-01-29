@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+
+
+
+
+<section id="contents">
+    <div class="welcome">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="content">
+                <h2>Welcome to eballot</h2>
+                <p>Make your decision-making process modern, secure, and effective.
+Our online voting systems let you upgrade from manually counting ballots without sacrificing the integrity of your vote.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      
+      <div class="container-fluid">
+     
+       
+         <form>
+          <select class="form-control selcls" id="greeter" name="fullName" data-style="btn-success" [(ngModel)]="voter.fullName"> 
+                   <option value="" selected hidden >Choose a CIN Number</option>
+                   <option *ngFor="let item of electionList"  >                    
+                      {{item.cin}}
+                   </option>   
+          </select>
+          <br><br>
+          <button type="button" class="btn btn-outline  btn-secondary btn-lg" (click)="myFunction()">Get Result</button>
+          <br>
+         </form>
+              
+
+
+      
+          <ng-template [ngIf]="isElection">
+          <div class="row">
+            <div class="col-md-11">
+              <div class="chart-container">
+                <h3><br><b>Voting Poll</b> <br><br>For {{this.electionName}}</h3>
+                <br>
+                <google-chart [data]="pieChart"></google-chart>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+                   <br>
+            <div class="col-md-4">
+              <div class="chart-container">
+                <br>
+                <h3></h3>
+                <google-chart [data]="ColumnChart"></google-chart>
+              </div>
+            </div>
+
+            <div class="col-md-7">
+              <div class="chart-container">
+                <br>
+                <h3></h3>
+                <google-chart [data]="lineChart"></google-chart>
+              </div>
+            </div>
+           
+          </div>
+        </ng-template>
+    
+    </div>
+
+</section>     

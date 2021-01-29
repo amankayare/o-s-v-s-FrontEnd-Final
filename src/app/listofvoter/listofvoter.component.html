@@ -1,0 +1,113 @@
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+
+<body ng-app="myController">
+    <div ng-controller="myController">
+      <section id="contents">
+
+        <!-- search : <input type="text" placeholder="Search Voter " ng-Model="searchText" >  -->
+        <br>
+        <h1>Voter List</h1>
+       
+        <div class="tbl-header ">
+          <table>
+            <thead>
+              <tr>
+                <th>Employee-ID</th>
+                <th>Full Name</th>                
+                <th>Adharcard Number</th>
+                <th>E-Mail</th>
+               <th>Choose Voter</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table>
+            <tbody>
+
+            <tr *ngFor="let voter of listOfVoter | search:adharNo;" >
+              <td>
+                  
+                {{voter.employeeId}}
+              
+            </td>
+            <td>
+              
+                {{voter.fullName}}
+             
+            </td>
+            <td>
+              
+                {{voter.adharNo}} 
+              
+            </td>
+            <td>
+              
+                {{voter.email}} 
+              
+            </td>
+               
+            <td>
+              <input type="checkbox" class="largerCheckbox"
+                    name="checkBox2" (click)="getVoter(voter.voterId)" >
+
+            </td>
+          </tr>
+            </tbody>
+          </table>
+        </div>
+    
+        <nav aria-label="...">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Add Election Details</a>
+              </li>
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Select Candidates for Election </a>
+              </li>
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" >Select Voters for Election <span class="sr-only">(current)</span></a>
+              </li>
+              &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; <button type="button" (click)="addAllElectionDetails()" class="btn btn-danger btn-large" data-toggle="modal" data-target="#exitApplication">
+                submit </button>
+              <span>sending mail....</span>
+            </ul>
+          </nav>
+      <!-- Exit (Are you sure?) Modal -->
+      <!-- <div class="modal fade" id="exitApplication" tabindex="-1" role="dialog" aria-labelledby="exitApplication">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" >&times;</span></button>
+                                 </div>
+            <div class="modal-body">
+              Do you want to save this application for later?
+            </div>
+            <div class="modal-footer">
+              <a data-dismiss="modal" role="button" class="btn btn-default btn-large">Don't save</a>
+              <a href="E-Ballot/api/admin" role="button" class="btn btn-success btn-large">Save</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- /Exit (Are you sure?) Modal -->
+      <!-- <circle-progress *ngIf="showSpinner"
+      [percent]="100"
+      [radius]="100"
+      [outerStrokeWidth]="16"
+      [innerStrokeWidth]="8"
+      [outerStrokeColor]="'#78C000'"
+      [innerStrokeColor]="'#C7E596'"
+      [animation]="true"
+      [animationDuration]="50000"
+      ></circle-progress> -->
+</section>
+    </div>
+</body>
+
+
+   

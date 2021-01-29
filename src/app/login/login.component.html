@@ -1,0 +1,28 @@
+<app-header></app-header>
+<br>
+<br>
+<br>
+    <section>
+        <div class="container">
+          <div class="user signinBx">
+            <div class="imgBx"><img src="https://www.eballot.com/hs-fs/hubfs/EBA-03-Home-Online-Election-Software-Security.jpg?width=1300&height=720&name=EBA-03-Home-Online-Election-Software-Security.jpg" alt="" /></div>
+            <div class="formBx">
+              <form [formGroup]="form" >
+                <h2>Sign In</h2>
+                <input type="number" placeholder="Adharcard Number"  formControlName="adharNo" required/>
+                <input type="password"  formControlName="password" placeholder="Password"  required/>
+                <input type="submit"   (click)="submitForm()" value="Login">
+                <div class="alert alert-danger" role="alert" *ngIf="invalidCredential">
+                              {{message}}
+              </div>
+              </form>
+            </div>
+          </div>
+        
+        </div>
+      </section>
+    <br>
+    <br>
+    <br>
+  
+    <app-footer></app-footer>

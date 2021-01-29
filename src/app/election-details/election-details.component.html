@@ -1,0 +1,84 @@
+<form #ElectionForm="ngForm" >
+    <div class="row">
+
+      <div class="col-lg-offset-0 col-lg-6 col-xs-12 col-sm-6">
+        <div class="form-group">
+          <label for="exampleInputEmail1">CIN Number</label>
+          <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
+          padding: .5rem .75rem;border-radius: .50rem;" type="text" name="cin" [(ngModel)]="Election.cin" class="form-control" id="exampleInputEmail1" placeholder="CIN Number">
+        </div>
+      </div>
+    
+
+  
+      <div class="col-lg-6 col-xs-12 col-sm-6">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Election Name</label>
+          <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
+          padding: .5rem .75rem;border-radius: .50rem;" type="text" name="electionName" [(ngModel)]="Election.electionName" class="form-control" id="exampleInputEmail1" placeholder="Election Name">
+        </div>
+      </div>
+      
+      
+      <div class="col-lg-offset-0 col-lg-6 col-xs-12 ">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Start Date</label>
+          <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
+          padding: .5rem .75rem;border-radius: .50rem;" type="date" name="startDate" [(ngModel)]="Election.startDate" class="form-control" id="exampleInputEmail1" placeholder="Start Date Of Election">
+        </div>
+      </div>
+
+      <div class="col-lg-offset-0 col-lg-6 col-xs-12 col-sm-6">
+        <div class="form-group">
+          <label for="exampleInputEmail1">End Date</label>
+          <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
+          padding: .5rem .75rem;border-radius: .50rem;" type="date" name="endDate" [(ngModel)]="Election.endDate" class="form-control" id="exampleInputEmail1" placeholder="End Date of Election">
+        </div>
+      </div>
+
+         
+
+      <div class="col-lg-offset-0 col-lg-6 col-xs-12 col-sm-6">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Result Date</label>
+          <input style="border: 1px solid rgba(0,0,0,.15);     width: 100%;
+          padding: .5rem .75rem;border-radius: .50rem;" type="date" class="form-control" name="resultDate" [(ngModel)]="Election.resultDate" id="exampleInputEmail1" placeholder="Result Date of Election">
+        </div>
+      </div>
+
+      <div class="bg-warning col-lg-offset-0 col-lg-12 col-xs-12">
+        <div class="checkbox">
+          <label>
+          Remember once you sumbit the form you are not allowed to make any further changes. So make sure that
+        you enter the correct details.</label>
+        </div>
+      </div>
+    
+    </div><!--/ Row-->
+    
+    
+
+    <button type="button" class="btn btn-primary btn-large" data-target="#exitApplication" (click)="addElection()" >Create Ballot</button>
+
+    <!-- Exit (Are you sure?) Modal -->
+    <!-- <div class="modal fade" id="exitApplication" tabindex="-1" role="dialog" aria-labelledby="exitApplication">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                               </div>
+          <div class="modal-body">
+            Do you want to save this application for later?
+          </div>
+          <div class="modal-footer">
+            <a data-dismiss="modal" role="button" class="btn btn-default btn-large">Don't save</a>
+            <a routerLink="E-Ballot/api/candidatelist"  role="button" class="btn btn-success btn-large">Save</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- /Exit (Are you sure?) Modal -->
+
+
+    
+  </form>
