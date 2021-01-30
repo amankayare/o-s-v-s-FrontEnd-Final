@@ -106,8 +106,19 @@ function loadTracking() {
 }
 //========================================================================================================
 
+$(document).ready(function(){
 
-var fields = "#electionName, #startDate, #endDate, #resultDate";
+    $('#register').attr("disabled", true);
+
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  
+  });
+  
 
 $(fields).on('change', function() {
     if (allFilled()) {
@@ -126,6 +137,3 @@ function allFilled() {
     });
     return filled;
 }
-$(document).ready(function() {
-    $('#register').attr("disabled", true);
-});
